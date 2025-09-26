@@ -1,0 +1,31 @@
+<p>Nombre d'auteurs : {{ authors|length }}</p>
+{% set totalbooks = 0 %}
+
+<table border="1" cellpadding="5">
+    <tr>
+        <th>Image</th>
+        <th>Nom</th>
+        <th>Mail</th>
+        <th>Nombre de livres</th>
+        <th>Détails</th>
+    </tr>
+    {% if authors is empty or authors is null %}
+        <tr>
+            <td colspan="4">No authors found.</td>
+        </tr>
+    {% endif %}
+    {% for author in authors %}
+        {% set totalbooks = totalbooks + author.nb_books %}
+        <tr>
+            <td><img src="{{ author.picture }}" alt="{{ author.username }}" width="80"></td>
+            <td>{{ author.username| upper}}</td>
+            <td>{{ author.email }}</td>
+            <td>{{ author.nb_books }}</td>
+            <th><a href="{{ path('app_author_details',{'id': author.id}) }}">Details</a></th>
+        </tr>
+
+    {% endfor %}
+<p>Nombre total de livres : {{ totalbooks }}</p>
+
+
+</table>

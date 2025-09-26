@@ -17,7 +17,7 @@ final class ServiceController extends AbstractController
     }
 
     #[Route('/index', name: 'app_service_index')]
-    public function gotoIndex(): Response //redirection vers la page d'accueil
+    public function gotoIndex(): Response 
     {
         return $this->redirectToRoute('app_home');
     }

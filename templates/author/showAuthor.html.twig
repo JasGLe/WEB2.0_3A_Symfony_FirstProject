@@ -1,0 +1,8 @@
+ {% for author in authors %}
+    {% if author.id == id %}
+        <h1>Auteur: {{ author.username }}</h1>
+        <p>Mail: {{ author.email }}</p>
+        <p>Nombre de livres: {{ author.nb_books }}</p>
+        <img src="{{ author.picture }}" alt="{{ author.username }}" width="150">
+    {% endif %}
+ {% endfor %}
