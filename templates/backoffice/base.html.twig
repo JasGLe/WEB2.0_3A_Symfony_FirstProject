@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Backoffice{% endblock %}</title>
+
+    {# Google Fonts + Icons #}
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons" rel="stylesheet">
+
+    {# CSS Files from assets #}
+
+    <link href="{{ asset('assets/css/material-dashboard.css') }}" rel="stylesheet" />
+</head>
+<body>
+    <div class="wrapper">
+        {% include 'backoffice/partials/sidebar.html.twig' %}
+        <div class="main-panel">
+            {% include 'backoffice/partials/navbar.html.twig' %}
+            <div class="content">
+                <div class="container-fluid">
+                    {% block body %}{% endblock %}
+                </div>
+            </div>
+            {% include 'backoffice/partials/footer.html.twig' %}
+        </div>
+    </div>
+
+    {# JS Files in correct order #}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ asset('assets/js/core/popper.min.js') }}"></script>
+    <script src="{{ asset('assets/js/core/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/js/plugins/perfect-scrollbar.min.js') }}"></script>
+    <script src="{{ asset('assets/js/material-dashboard.min.js') }}"></script>
+</body>
+</html>
