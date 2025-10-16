@@ -1,0 +1,11 @@
+{% block title %}
+<h1 Book Detail </h1>
+{% endblock %}
+{% block body %} 
+<div style="text-align: center;">
+
+<p>Title of book : {{ book.title }} </p>
+<p>Publication date : {{ book.publicationDate ? book.publicationDate|date('F j, Y H:i') : 'N/A' }}</p>
+<p>Author : {{ book.author.name }}</p>
+</div>
+{% endblock %}

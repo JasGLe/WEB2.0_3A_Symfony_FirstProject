@@ -24,14 +24,14 @@
                         <td>{{ book.title }}</td>
                         <td>{{ book.publicationDate|date('F j, Y H:i') }}</td>
                         <td>{{ book.published ? '1' : '0' }}</td>
-                        <td>{{ book.category ?? 'N/A' }}</td>
+                        <td>{{ book.category  }}</td>
                         <td>{{ book.author.name }}</td>
                         <td>
                             <a href="{{ path('app_book_edit', {'id': book.id}) }}" style="color: blue; text-decoration: underline;">edit</a>
-                            |
                             <a href="{{ path('app_book_delete', {'id': book.id}) }}" 
-                               onclick="return confirm('Are you sure you want to delete this book?')" 
-                               style="color: red; text-decoration: underline;">delete</a>
+                               style="color: red; text-decoration: underline;">delete</a>  
+                            <a href="{{ path('app_book_detail',{'id': book.id}) }}" 
+                               style="color: green; text-decoration: underline;">detail</a>
                         </td>
                     </tr>
                 {% endfor %}

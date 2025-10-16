@@ -40,4 +40,9 @@ class AuthorRepository extends ServiceEntityRepository
     //            ->getOneOrNullResult()
     //        ;
     //    }
+    public function showAllQB(): mixed {
+        return $this->createQueryBuilder('a')
+            ->getQuery()
+            ->getResult();
+    }
 }

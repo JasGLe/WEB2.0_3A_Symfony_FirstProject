@@ -69,4 +69,10 @@ final class AuthorController extends AbstractController
         $em->flush();
         return new Response("Author deleted successfully");
     }
+    #[Route("/showAllAuthorDQ" ,name : "showAllAuthorDQ")]
+    public function showAllAuthorQB(AuthorRepository $repo){
+        $author = $repo->showAllQB();
+        return $this->render("author/authors.html.twig",["authors" => $author
+        ]);
+    }
 }

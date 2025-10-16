@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Update Book{% endblock %}
+
+{% block body %}
+<div style="text-align: center;">
+    <h1>Update Book</h1>
+
+    {{ form_start(form) }}
+        <div style="margin: 10px 0;">
+            {{ form_label(form.ref) }}
+            {{ form_widget(form.ref) }}
+        </div>
+        <div style="margin: 10px 0;">
+            {{ form_label(form.title) }}
+            {{ form_widget(form.title) }}
+        </div>
+        <div style="margin: 10px 0;">
+            {{ form_label(form.publicationDate) }}
+            {{ form_widget(form.publicationDate) }}
+        </div>
+        <div style="margin: 10px 0;">
+            {{ form_label(form.published) }}
+            {{ form_widget(form.published) }}
+        </div>
+        <div style="margin: 10px 0;">
+            {{ form_label(form.category) }}
+            {{ form_widget(form.category) }}
+        </div>
+        <div style="margin: 10px 0;">
+            {{ form_label(form.author) }}
+            {{ form_widget(form.author) }}
+        </div>
+        <div style="margin: 20px 0;">
+            <button type="submit" class="btn btn-primary" style="padding: 10px 20px;">Save</button>
+        </div>
+    {{ form_end(form) }}
+
+    <div style="margin-top: 20px;">
+        <a href="{{ path('app_book_list') }}" style="color: blue; text-decoration: underline;">back to list</a>
+    </div>
+</div>
+{% endblock %}
